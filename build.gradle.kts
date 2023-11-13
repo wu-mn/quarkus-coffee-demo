@@ -14,6 +14,7 @@ val quarkusPlatformArtifactId: String by project
 val quarkusPlatformVersion: String by project
 
 dependencies {
+    implementation("io.quarkus:quarkus-smallrye-openapi")
     implementation("io.quarkus:quarkus-jdbc-postgresql")
     implementation("io.quarkus:quarkus-resteasy-jackson")
     implementation("io.quarkus:quarkus-hibernate-orm-panache-kotlin")
@@ -23,13 +24,13 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.quarkus:quarkus-arc")
     testImplementation("io.quarkus:quarkus-junit5")
-    implementation("io.quarkus:quarkus-hibernate-orm-panache-kotlin")
-    //
     implementation(enforcedPlatform("io.quarkus:quarkus-bom:${quarkusPlatformVersion}"))
     implementation("io.quarkus:quarkus-resteasy")
     implementation("javax.persistence:javax.persistence-api:2.2")
     // Hibernate ORM specific dependencies
-    implementation("io.quarkus:quarkus-hibernate-orm-panache")
+    // implementation("io.quarkus:quarkus-hibernate-orm-panache")
+    implementation ("javax:javaee-api:8.0")
+    implementation("io.quarkus:quarkus-rest-client")
 
 
 }
@@ -55,5 +56,6 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
     kotlinOptions.javaParameters = true
 }
+
 
 
