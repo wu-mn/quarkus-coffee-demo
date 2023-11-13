@@ -10,7 +10,7 @@ open class Coffee(
     open var productName: String = "",
     open var description: String = "",
     open var originCountry: String = "",
-    open var price: Double = 0.00
+    open var price: Double = 0.00,
 
 ) : PanacheEntity()
 
